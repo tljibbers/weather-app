@@ -1,11 +1,19 @@
-export default function callApi()
+export default async function callApi()
 {
-    console.log("test")
-    fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/london?key=244JMX32FS9MBU4F9RVWDZ3CP', {mode: 'cors'})
-    .then(function(response) {
-        console.log(response.json())
-    })
-    .catch(function(err) {
-        console.log(err)
-    })
+    
+    try{
+        const response = await fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/pomona?key=244JMX32FS9MBU4F9RVWDZ3CP', {mode: 'cors'})
+
+        if(!response.ok)
+        {
+            throw new Error("Could Not Fetch.")
+        }
+
+        const data = await response.json();
+        console.log(data)
+
+    }
+    catch(error){
+        console.log(error)
+    }
 }
