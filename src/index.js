@@ -1,3 +1,4 @@
-import callApi from "./apiCall";
 
-callApi()
+import { searchPlace } from "./search";
+
+searchPlace();
