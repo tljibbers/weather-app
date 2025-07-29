@@ -1,3 +1,4 @@
+const weatherContainer = document.querySelector(".weather-container")
 export async function callApi()
 {
     
@@ -25,6 +26,7 @@ export async function recieveAPI()
     console.log(data)
     displayCityAndTemp(data)
     displayInformationHours(data)
+    displayOtherDays(data)
 }
 
 function displayCityAndTemp(data)
@@ -47,6 +49,8 @@ function displayCityAndTemp(data)
     cityTempContainer.appendChild(temp)
     cityTempContainer.appendChild(condition)
     cityTempContainer.appendChild(highAndLowTemp)
+
+    weatherContainer.appendChild(cityTempContainer)
 
 }
 function displayInformationHours(data)
@@ -77,6 +81,7 @@ function displayInformationHours(data)
         
 
     }
+    weatherContainer.appendChild(descriptionContainer)
 }
 
 function determineIcon(image, data)
@@ -107,4 +112,5 @@ function displayOtherDays(data)
 
         fullWeekContainer.appendChild(dayContainer)
     }
+    weatherContainer.appendChild(fullWeekContainer)
 }
