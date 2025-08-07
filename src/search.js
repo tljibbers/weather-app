@@ -1,6 +1,7 @@
 import { callApi, recieveAPI } from "./apiCall";
 
 const weatherContainer = document.querySelector(".weather-container")
+const headerContainer = document.querySelector(".header")
 
 export function searchPlace()
 {
@@ -19,6 +20,32 @@ export function searchPlace()
 
 }
 
+export function searchPlaceButton()
+{
+    const createSecondForm = document.createElement("form")
+    const search = document.createElement("input")
+    search.setAttribute('type', 'text');
+    search.setAttribute('name', 'placeName')
+    search.setAttribute('placeholder', 'Enter Country or City')
+    search.id = 'search-term'
+
+    createSecondForm.appendChild(search)
+    weatherContainer.appendChild(createSecondForm)
+    sendSearchTerm(createSecondForm, search)
+    
+
+}
+
+function searchButtonFunctionality()
+{
+    const searchButton = document.createElement("button")
+    headerContainer.appendChild(searchButton)
+
+    searchButton.addEventListener("click", function() {
+        searchPlaceButton()
+    })
+}
+
 function sendSearchTerm(form, search)
 {
     form.addEventListener('submit', function(event){
@@ -30,7 +57,7 @@ function sendSearchTerm(form, search)
         {
             callApi()
             recieveAPI()
-
+            searchButtonFunctionality()
         }
     })
 }
