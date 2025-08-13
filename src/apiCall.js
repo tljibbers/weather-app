@@ -94,6 +94,7 @@ function displayInformationHours(data)
         secondaryContainer.style.borderStyle = "solid"
         secondaryContainer.style.display = 'flex'
         secondaryContainer.style.gap = "5px"
+        secondaryContainer.style.justifyContent = 'space-around'
         secondaryContainer.style.minHeight = '0'
         secondaryContainer.style.overflowX = 'scroll'
 
