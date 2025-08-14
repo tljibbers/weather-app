@@ -1,16 +1,20 @@
 export function styleDisplayCityAndTemp(cityTempContainer)
 {
-    cityTempContainer.style.border = "1px"
-    cityTempContainer.style.borderRadius = "5px"
-    cityTempContainer.style.borderStyle = "solid"
     cityTempContainer.style.textAlign = 'center'
+    cityTempContainer.style.fontSize = '40px'
+    cityTempContainer.style.color = 'white'
+    cityTempContainer.style.marginBottom = '20px'
+    cityTempContainer.style.marginTop = '20px'
 }
 
 export function styleDisplayInformationHours(descriptionContainer)
 {
-    descriptionContainer.style.border = "1px"
     descriptionContainer.style.borderRadius = "5px"
-    descriptionContainer.style.borderStyle = "solid"
+    descriptionContainer.style.backgroundColor = '#001646ff'
+    descriptionContainer.style.color = 'white'
+    descriptionContainer.style.height = '100px'
+    descriptionContainer.style.marginBottom = '20px'
+
 
 }
 
@@ -22,6 +26,8 @@ export function styleDisplayOtherDays(fullWeekContainer)
     fullWeekContainer.style.display = 'flex'
     fullWeekContainer.style.gap = '1px'
     fullWeekContainer.style.justifyContent = 'space-evenly'
+    fullWeekContainer.style.backgroundColor = '#001646ff'
+    fullWeekContainer.style.color = 'white'
 }
 
 export function styleDisplayOtherDaysSupport(dayContainer)

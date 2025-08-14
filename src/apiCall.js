@@ -42,13 +42,13 @@ function displayCityAndTemp(data)
     cityName.innerHTML = data.resolvedAddress
 
     const temp = document.createElement("div")
-    temp.innerHTML = String(Math.round(data.currentConditions.temp))
+    temp.innerHTML = String(Math.round(data.currentConditions.temp)) + "°F"
 
     const condition = document.createElement("div")
     condition.innerHTML = data.currentConditions.conditions
 
     const highAndLowTemp = document.createElement("div")
-    highAndLowTemp.innerHTML = 'H:' + data.days[0].tempmax + ' ' + 'L:' + data.days[0].tempmin
+    highAndLowTemp.innerHTML = 'H:' + data.days[0].tempmax + '°F' + ' ' + 'L:' + data.days[0].tempmin + '°F'
     
     cityTempContainer.appendChild(cityName)
     cityTempContainer.appendChild(temp)
@@ -66,6 +66,8 @@ function displayInformationHours(data)
     const descriptionContainer = document.createElement("div")
     const description = document.createElement("div")
     description.innerHTML = data.description
+    description.style.textAlign = 'center'
+    description.style.fontSize = '20px'
     
     descriptionContainer.appendChild(description)
     const secondaryContainer = document.createElement("div")
@@ -79,7 +81,7 @@ function displayInformationHours(data)
         const weatherIcon = document.createElement("img")
 
         const temperature = document.createElement("div")
-        temperature.innerHTML = String(Math.round(data.days[0].hours[i].temp))
+        temperature.innerHTML = String(Math.round(data.days[0].hours[i].temp)) + '°' + 'F'
         console.log(temperature)
 
         hourContainer.appendChild(time)
@@ -91,12 +93,12 @@ function displayInformationHours(data)
 
         secondaryContainer.appendChild(hourContainer)
 
-        secondaryContainer.style.borderStyle = "solid"
+        
         secondaryContainer.style.display = 'flex'
-        secondaryContainer.style.gap = "5px"
+        secondaryContainer.style.gap = "10px"
         secondaryContainer.style.justifyContent = 'space-around'
         secondaryContainer.style.minHeight = '0'
-        secondaryContainer.style.overflowX = 'scroll'
+        
 
         descriptionContainer.appendChild(secondaryContainer)
         
@@ -130,7 +132,7 @@ function displayOtherDays(data)
         const weatherIcon = document.createElement("img")
 
         const temperature = document.createElement("div")
-        temperature.innerHTML = data.days[i].temp
+        temperature.innerHTML = data.days[i].temp + '°' + 'F'
 
         dayContainer.appendChild(date)
         dayContainer.appendChild(weatherIcon)
