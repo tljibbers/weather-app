@@ -1,5 +1,5 @@
 import { callApi, recieveAPI } from "./apiCall";
-import { styleSearchBar } from "./stylingJavascript";
+import { styleSearchBar, styleSearchBarButton } from "./stylingJavascript";
 
 const weatherContainer = document.querySelector(".weather-container")
 const searchButtonClass = document.querySelector(".search-button")
@@ -30,7 +30,7 @@ export function searchPlaceButton()
     search.setAttribute('name', 'placeName')
     search.setAttribute('placeholder', 'Enter Country or City')
     search.id = 'search-term'
-
+    styleSearchBarButton(search)
     createSecondForm.appendChild(search)
     weatherContainer.appendChild(createSecondForm)
     sendSearchTerm(createSecondForm, search)
@@ -42,6 +42,11 @@ function searchButtonFunctionality()
 {
     resetInformation()
     const searchButton = document.createElement("button")
+    searchButton.innerHTML = "Search"
+    searchButton.style.width = "60px"
+    searchButton.style.height = "20px"
+    searchButton.style.borderRadius = "5px"
+
     searchButtonClass.appendChild(searchButton)
 
     searchButton.addEventListener("click", function() {

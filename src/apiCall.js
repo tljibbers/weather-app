@@ -74,7 +74,6 @@ function displayInformationHours(data)
 
     for(let i = 0; i < data.days[0].hours.length; i++)
     {
-        //console.log(data.days[0].hours[i])
         const hourContainer = document.createElement("div")
         const time = document.createElement("div")
         convertMilitaryTimeToStandard(data, i, time)
@@ -89,7 +88,6 @@ function displayInformationHours(data)
         hourContainer.appendChild(temperature)
 
         hourContainer.style.width = "60px"
-        hourContainer.style.borderStyle = "solid"
 
         secondaryContainer.appendChild(hourContainer)
 
@@ -108,13 +106,6 @@ function displayInformationHours(data)
     weatherContainer.appendChild(descriptionContainer)
 }
 
-function determineIcon(image, data)
-{
-    if(data.currentConditions.conditions == "Clear")
-    {
-
-    }
-}
 
 function displayOtherDays(data)
 {
